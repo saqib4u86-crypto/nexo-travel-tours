@@ -144,7 +144,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 <input
                   type="tel"
                   required
-                  placeholder="+92 300 1234567"
+                  placeholder="+92 51 6125268"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs font-medium text-[#2C3E50] focus:ring-2 focus:ring-[#00A8CC] focus:outline-none"

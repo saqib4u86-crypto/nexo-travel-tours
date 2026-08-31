@@ -27,7 +27,7 @@ export const FloatingWhatsApp: React.FC = () => {
     setSentMessage(true);
     // Construct WhatsApp API URL
     const encoded = encodeURIComponent(msgText);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=923001234567&text=${encoded}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=92516125268&text=${encoded}`;
     
     // Open in new tab or trigger link
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');

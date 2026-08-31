@@ -83,11 +83,11 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="pt-2 flex flex-col gap-2 text-xs text-slate-300">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-[#00A8CC]" />
-              <span>Helpline: +92 300 1234567 / +971 50 1234567</span>
+              <a href="tel:+92516125268" className="hover:text-[#00A8CC] transition-colors">Helpline: +92 51 6125268</a>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#E67E22]" />
-              <span>Email: info@nexotravel.com</span>
+              <a href="mailto:nexotraveltours@gmail.com" className="hover:text-[#E67E22] transition-colors">Email: nexotraveltours@gmail.com</a>
             </div>
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-[#00A8CC] shrink-0 mt-0.5" />
@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({
             </li>
             <li>
               <button onClick={() => handleLinkClick('contact')} className="hover:text-[#00A8CC] transition-colors">
-                Contact &amp; Branches
+                Contact &amp; Head Office
               </button>
             </li>
           </ul>

@@ -718,7 +718,7 @@ export const FAQS: FAQItem[] = [
   {
     category: 'Payment',
     question: 'What payment methods do you accept?',
-    answer: 'We accept direct online bank transfers, debit/credit cards (Visa/Mastercard), corporate cheques, cash deposits at our branch offices, and international wire transfers.'
+    answer: 'We accept direct online bank transfers, debit/credit cards (Visa/Mastercard), corporate cheques, cash deposits at our head office, and international wire transfers.'
   },
   {
     category: 'General',

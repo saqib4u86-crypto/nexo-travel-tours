@@ -73,11 +73,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Right: Contact Numbers & Currency Switcher */}
           <div className="flex items-center gap-4 text-slate-300">
             <a
-              href="tel:+923001234567"
+              href="tel:+92516125268"
               className="hidden lg:flex items-center gap-1.5 hover:text-[#00A8CC] transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-[#00A8CC]" />
-              <span>+92 300 1234567</span>
+              <span>+92 51 6125268</span>
             </a>
 
             <div className="hidden sm:flex items-center gap-1.5 text-slate-400">
@@ -226,11 +226,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               Book Free Visa Consultation
             </button>
             <a
-              href="tel:+923001234567"
+              href="tel:+92516125268"
               className="w-full py-2.5 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 text-center flex items-center justify-center gap-2"
             >
               <Phone className="w-4 h-4 text-[#00A8CC]" />
-              Call Helpline: +92 300 1234567
+              Call Helpline: +92 51 6125268
             </a>
           </div>
         </div>

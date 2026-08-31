@@ -35,29 +35,13 @@ export const ContactSection: React.FC = () => {
     }, 800);
   };
 
-  const offices = [
-    {
-      name: 'Nexo Head Office & Visa Lounge',
-      address: '259 Airport Housing Society Rawalpindi Islamabad, Pakistan',
-      phone: '+92 51 2233445 / +92 300 1234567',
-      email: 'info@nexotravel.com',
-      hours: 'Mon - Sat: 9:00 AM - 8:00 PM (Sunday by Appointment)'
-    },
-    {
-      name: 'Executive Consultation Desk',
-      address: '259 Airport Housing Society Rawalpindi Islamabad, Pakistan',
-      phone: '+92 321 7654321 / +92 300 1234567',
-      email: 'advisory@nexotravel.com',
-      hours: 'Mon - Sun: 8:00 AM - 10:00 PM (7 Days a Week)'
-    },
-    {
-      name: 'Dubai Liaison & UAE Partner Desk',
-      address: 'Office 708, Business Bay Tower, Al Saada St, Business Bay, Dubai, United Arab Emirates',
-      phone: '+971 4 398 7654 / +971 50 1234567',
-      email: 'dubai@nexotravel.com',
-      hours: 'Mon - Sat: 9:00 AM - 6:00 PM'
-    }
-  ];
+  const headOffice = {
+    name: 'Nexo Travel & Tours — Head Office & Visa Lounge',
+    address: '259 Airport Housing Society Rawalpindi Islamabad, Pakistan',
+    phone: '+92 51 6125268',
+    email: 'nexotraveltours@gmail.com',
+    hours: 'Mon - Sat: 9:00 AM - 8:00 PM (Sunday by Appointment)'
+  };
 
   return (
     <section id="contact-us-section" className="py-16 bg-slate-50 border-b border-slate-200">
@@ -154,7 +138,7 @@ export const ContactSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. +92 300 1234567"
+                      placeholder="e.g. +92 51 6125268"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2.5 text-xs sm:text-sm font-medium text-[#2C3E50] focus:ring-2 focus:ring-[#00A8CC] focus:outline-none"
@@ -271,24 +255,24 @@ export const ContactSection: React.FC = () => {
 
               <div className="space-y-4 text-xs">
                 <a
-                  href="tel:+923001234567"
+                  href="tel:+92516125268"
                   className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-colors"
                 >
                   <Phone className="w-5 h-5 text-[#00A8CC]" />
                   <div>
                     <div className="text-[10px] text-slate-300 font-semibold">24/7 VIP Phone Helpline</div>
-                    <div className="text-sm font-bold text-white">+92 300 1234567</div>
+                    <div className="text-sm font-bold text-white">+92 51 6125268</div>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@nexotravel.com"
+                  href="mailto:nexotraveltours@gmail.com"
                   className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-colors"
                 >
                   <Mail className="w-5 h-5 text-[#E67E22]" />
                   <div>
                     <div className="text-[10px] text-slate-300 font-semibold">Official Inquiries &amp; Visas</div>
-                    <div className="text-sm font-bold text-white">info@nexotravel.com</div>
+                    <div className="text-sm font-bold text-white">nexotraveltours@gmail.com</div>
                   </div>
                 </a>
 
@@ -319,48 +303,64 @@ export const ContactSection: React.FC = () => {
 
         </div>
 
-        {/* Physical Office Locations Grid */}
-        <div className="mt-8">
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <span className="text-xs font-bold text-[#E67E22] uppercase tracking-wider">Our Presence</span>
+        {/* Physical Office Location Card */}
+        <div className="mt-10">
+          <div className="text-center max-w-2xl mx-auto mb-6">
+            <span className="text-xs font-bold text-[#E67E22] uppercase tracking-wider">Official Location</span>
             <h3 className="text-xl sm:text-2xl font-extrabold text-[#2C3E50]">
-              Branch Offices &amp; Consultation Lounges
+              Visit Our Head Office
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {offices.map((office, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between">
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-[#00A8CC]/10 text-[#00A8CC] flex items-center justify-center mb-3">
-                    <Building className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-sm font-bold text-[#2C3E50] mb-2">{office.name}</h4>
-                  
-                  <div className="space-y-2 text-xs text-slate-600 mb-4">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-4 h-4 text-[#E67E22] shrink-0 mt-0.5" />
-                      <span>{office.address}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-4 h-4 text-[#00A8CC] shrink-0" />
-                      <span>{office.phone}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-slate-400 shrink-0" />
-                      <span>{office.hours}</span>
-                    </div>
-                  </div>
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-[#00A8CC]/10 text-[#00A8CC] flex items-center justify-center shrink-0">
+                  <Building className="w-6 h-6" />
                 </div>
-
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="text-slate-400">{office.email}</span>
-                  <span className="text-[10px] font-bold text-[#00A8CC] bg-[#00A8CC]/10 px-2 py-0.5 rounded">
-                    Open
-                  </span>
+                <div>
+                  <h4 className="text-base font-bold text-[#2C3E50]">{headOffice.name}</h4>
+                  <span className="text-[11px] font-semibold text-[#00A8CC]">Primary Operations &amp; In-Person Visa Counseling</span>
                 </div>
               </div>
-            ))}
+              
+              <div className="space-y-2 text-xs sm:text-sm text-slate-600 pt-1">
+                <div className="flex items-start gap-2.5">
+                  <MapPin className="w-4 h-4 text-[#E67E22] shrink-0 mt-0.5" />
+                  <span className="font-medium text-[#2C3E50]">{headOffice.address}</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Phone className="w-4 h-4 text-[#00A8CC] shrink-0" />
+                  <a href={`tel:${headOffice.phone.replace(/\\s+/g, '')}`} className="hover:text-[#00A8CC] font-medium transition-colors">
+                    {headOffice.phone}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Mail className="w-4 h-4 text-[#E67E22] shrink-0" />
+                  <a href={`mailto:${headOffice.email}`} className="hover:text-[#E67E22] font-medium transition-colors">
+                    {headOffice.email}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <Clock className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span>{headOffice.hours}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full sm:w-auto flex flex-col sm:items-end gap-3 pt-4 sm:pt-0 border-t sm:border-t-0 border-slate-100 shrink-0">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Welcoming Visitors
+              </span>
+              <a
+                href={`tel:${headOffice.phone.replace(/\\s+/g, '')}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#00A8CC] hover:bg-[#0090af] text-white text-xs font-bold shadow-xs transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call for Directions</span>
+              </a>
+            </div>
           </div>
         </div>
 
