@@ -1,0 +1,6 @@
+{
+  "name": "Nexo Travel & Tours",
+  "description": "Premium travel and visa consultancy website for Nexo Travel & Tours offering global visa processing, tailored tour packages, flight ticketing, and expert travel guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
