@@ -27,7 +27,7 @@ export const FloatingWhatsApp: React.FC = () => {
     setSentMessage(true);
     // Construct WhatsApp API URL
     const encoded = encodeURIComponent(msgText);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=92516125268&text=${encoded}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=923205718477&text=${encoded}`;
     
     // Open in new tab or trigger link
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
@@ -60,7 +60,7 @@ export const FloatingWhatsApp: React.FC = () => {
                 </h4>
                 <div className="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                  <span>Online • Avg reply &lt; 2 mins</span>
+                  <span>+92 320 5718477 • Online</span>
                 </div>
               </div>
             </div>

@@ -55,6 +55,7 @@ export const ContactSection: React.FC = () => {
     name: 'Nexo Travel & Tours — Head Office & Visa Lounge',
     address: '259 Airport Housing Society Rawalpindi Islamabad, Pakistan',
     phone: '+92 51 6125268',
+    whatsapp: '+92 320 5718477',
     email: 'nexotraveltours@gmail.com',
     hours: 'Mon - Sat: 9:00 AM - 8:00 PM (Sunday by Appointment)'
   };
@@ -154,7 +155,7 @@ export const ContactSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. +92 51 6125268"
+                      placeholder="e.g. +92 320 5718477"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2.5 text-xs sm:text-sm font-medium text-[#2C3E50] focus:ring-2 focus:ring-[#00A8CC] focus:outline-none"
@@ -270,16 +271,17 @@ export const ContactSection: React.FC = () => {
               </p>
 
               <div className="space-y-4 text-xs">
-                <a
-                  href="tel:+92516125268"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-colors"
-                >
-                  <Phone className="w-5 h-5 text-[#00A8CC]" />
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 transition-colors">
+                  <Phone className="w-5 h-5 text-[#00A8CC] shrink-0" />
                   <div>
-                    <div className="text-[10px] text-slate-300 font-semibold">24/7 VIP Phone Helpline</div>
-                    <div className="text-sm font-bold text-white">+92 51 6125268</div>
+                    <div className="text-[10px] text-slate-300 font-semibold">24/7 VIP Helpline &amp; WhatsApp</div>
+                    <div className="text-sm font-bold text-white flex items-center gap-2 flex-wrap">
+                      <a href="tel:+92516125268" className="hover:text-[#00A8CC] transition-colors">+92 51 6125268</a>
+                      <span className="text-slate-400">/</span>
+                      <a href="tel:+923205718477" className="hover:text-[#00A8CC] transition-colors">+92 320 5718477</a>
+                    </div>
                   </div>
-                </a>
+                </div>
 
                 <a
                   href="mailto:nexotraveltours@gmail.com"
@@ -347,9 +349,15 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-[#00A8CC] shrink-0" />
-                  <a href={`tel:${headOffice.phone.replace(/\\s+/g, '')}`} className="hover:text-[#00A8CC] font-medium transition-colors">
-                    {headOffice.phone}
-                  </a>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <a href={`tel:${headOffice.phone.replace(/\\s+/g, '')}`} className="hover:text-[#00A8CC] font-medium transition-colors">
+                      {headOffice.phone}
+                    </a>
+                    <span className="text-slate-400">/</span>
+                    <a href={`tel:${headOffice.whatsapp.replace(/\\s+/g, '')}`} className="hover:text-[#00A8CC] font-medium transition-colors">
+                      {headOffice.whatsapp} <span className="text-[11px] text-emerald-600 font-semibold">(WhatsApp)</span>
+                    </a>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-[#E67E22] shrink-0" />

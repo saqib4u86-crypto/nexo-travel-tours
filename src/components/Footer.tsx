@@ -81,9 +81,12 @@ export const Footer: React.FC<FooterProps> = ({
           </p>
 
           <div className="pt-2 flex flex-col gap-2 text-xs text-slate-300">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#00A8CC]" />
-              <a href="tel:+92516125268" className="hover:text-[#00A8CC] transition-colors">Helpline: +92 51 6125268</a>
+            <div className="flex items-center gap-2 flex-wrap">
+              <Phone className="w-4 h-4 text-[#00A8CC] shrink-0" />
+              <span className="text-slate-400">Helpline:</span>
+              <a href="tel:+92516125268" className="hover:text-[#00A8CC] transition-colors">+92 51 6125268</a>
+              <span className="text-slate-500">/</span>
+              <a href="tel:+923205718477" className="hover:text-[#00A8CC] transition-colors">+92 320 5718477</a>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#E67E22]" />

@@ -72,13 +72,22 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right: Contact Numbers & Currency Switcher */}
           <div className="flex items-center gap-4 text-slate-300">
-            <a
-              href="tel:+92516125268"
-              className="hidden lg:flex items-center gap-1.5 hover:text-[#00A8CC] transition-colors"
-            >
+            <div className="hidden lg:flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5 text-[#00A8CC]" />
-              <span>+92 51 6125268</span>
-            </a>
+              <a
+                href="tel:+92516125268"
+                className="hover:text-[#00A8CC] transition-colors text-xs font-semibold"
+              >
+                +92 51 6125268
+              </a>
+              <span className="text-slate-500">/</span>
+              <a
+                href="tel:+923205718477"
+                className="hover:text-[#00A8CC] transition-colors text-xs font-semibold"
+              >
+                +92 320 5718477
+              </a>
+            </div>
 
             <div className="hidden sm:flex items-center gap-1.5 text-slate-400">
               <Clock className="w-3.5 h-3.5 text-[#00A8CC]" />
@@ -225,13 +234,22 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Calendar className="w-4 h-4" />
               Book Free Visa Consultation
             </button>
-            <a
-              href="tel:+92516125268"
-              className="w-full py-2.5 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 text-center flex items-center justify-center gap-2"
-            >
-              <Phone className="w-4 h-4 text-[#00A8CC]" />
-              Call Helpline: +92 51 6125268
-            </a>
+            <div className="flex flex-col gap-1.5">
+              <a
+                href="tel:+92516125268"
+                className="w-full py-2.5 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 text-center flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#00A8CC]" />
+                Call Helpline: +92 51 6125268
+              </a>
+              <a
+                href="tel:+923205718477"
+                className="w-full py-2.5 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 text-center flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#00A8CC]" />
+                Call / WhatsApp: +92 320 5718477
+              </a>
+            </div>
           </div>
         </div>
       )}
