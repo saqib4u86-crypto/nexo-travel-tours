@@ -78,6 +78,22 @@ export const NexoLogo: React.FC<NexoLogoProps> = ({
           <stop offset="100%" stopColor="#081A32" />
         </linearGradient>
 
+        {/* Master Gold Gradient for the NEXO Brand Name */}
+        <linearGradient id="nexoTextGold" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#DFBF5B" />
+          <stop offset="25%" stopColor="#C9981E" />
+          <stop offset="48%" stopColor="#FFF2B8" />
+          <stop offset="55%" stopColor="#E2BD4E" />
+          <stop offset="85%" stopColor="#B38018" />
+          <stop offset="100%" stopColor="#8A5A00" />
+        </linearGradient>
+
+        <linearGradient id="nexoTextStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8F6209" />
+          <stop offset="50%" stopColor="#E6CA65" />
+          <stop offset="100%" stopColor="#754E00" />
+        </linearGradient>
+
         {/* Drop shadow filter for 3D realism */}
         <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%" filterUnits="userSpaceOnUse">
           <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#000000" floodOpacity="0.12" />
@@ -234,12 +250,48 @@ export const NexoLogo: React.FC<NexoLogoProps> = ({
       {/* ============================================================ */}
       {/* 4. MIDDLE WORDMARK: "NEXO" & "TRAVEL & TOURS" */}
       {/* ============================================================ */}
-      {/* "NEXO" in bold, majestic navy serif display typography */}
+      {/* "NEXO" in majestic luxury gold typography with engraved inline effect */}
+      {/* Base Gold Structure with Subtle Stroke */}
       <text
         x="250"
         y="336"
         textAnchor="middle"
-        fill="#0B2240"
+        fill="url(#nexoTextGold)"
+        stroke="url(#nexoTextStroke)"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+        fontFamily="'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif"
+        fontSize="76"
+        fontWeight="800"
+        letterSpacing="0.08em"
+      >
+        NEXO
+      </text>
+
+      {/* Inline Carved Accent Stroke */}
+      <text
+        x="250"
+        y="336"
+        textAnchor="middle"
+        fill="none"
+        stroke="#FFF8D6"
+        strokeWidth="0.8"
+        strokeLinejoin="round"
+        fontFamily="'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif"
+        fontSize="76"
+        fontWeight="800"
+        letterSpacing="0.08em"
+      >
+        NEXO
+      </text>
+
+      {/* Top Surface Gold Reflection */}
+      <text
+        x="250"
+        y="336"
+        textAnchor="middle"
+        fill="url(#nexoTextGold)"
+        fillOpacity="0.96"
         fontFamily="'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif"
         fontSize="76"
         fontWeight="800"
@@ -250,23 +302,23 @@ export const NexoLogo: React.FC<NexoLogoProps> = ({
 
       {/* Left Gold Horizontal Rule */}
       <line
-        x1="100"
-        y1="358"
+        x1="98"
+        y1="357"
         x2="135"
-        y2="358"
+        y2="357"
         stroke="url(#goldLinearH)"
-        strokeWidth="2.5"
+        strokeWidth="2.4"
         strokeLinecap="round"
       />
 
-      {/* "TRAVEL & TOURS" Sub-heading */}
+      {/* "TRAVEL & TOURS" Sub-heading in Deep Navy */}
       <text
         x="250"
         y="363"
         textAnchor="middle"
         fill="#0B2240"
         fontFamily="'Plus Jakarta Sans', Arial, sans-serif"
-        fontSize="21"
+        fontSize="20.5"
         fontWeight="700"
         letterSpacing="0.28em"
       >
@@ -276,45 +328,28 @@ export const NexoLogo: React.FC<NexoLogoProps> = ({
       {/* Right Gold Horizontal Rule */}
       <line
         x1="365"
-        y1="358"
-        x2="400"
-        y2="358"
+        y1="357"
+        x2="402"
+        y2="357"
         stroke="url(#goldLinearH)"
-        strokeWidth="2.5"
+        strokeWidth="2.4"
         strokeLinecap="round"
       />
 
       {/* ============================================================ */}
-      {/* 5. URDU MOTTO IN CALLIGRAPHIC SCRIPT: "Manzil Soch Ki Dehleez Par" */}
-      {/* ============================================================ */}
-      <text
-        x="250"
-        y="397"
-        textAnchor="middle"
-        fill="url(#goldGradient)"
-        fontFamily="'Great Vibes', 'Alex Brush', 'Brush Script MT', cursive, serif"
-        fontSize="31"
-        fontWeight="500"
-        fontStyle="italic"
-        letterSpacing="0.02em"
-      >
-        Manzil Soch Ki Dehleez Par
-      </text>
-
-      {/* ============================================================ */}
-      {/* 6. BOTTOM ORNAMENTAL FLOURISH (Lines + Diamond + Center Bead) */}
+      {/* 5. BOTTOM ORNAMENTAL FLOURISH (Tapered Lines + Diamond + Center Bead) */}
       {/* ============================================================ */}
       <g transform="translate(250, 414)">
         {/* Left tapered line */}
-        <line x1="-55" y1="0" x2="-14" y2="0" stroke="#0B2240" strokeWidth="1.5" strokeLinecap="round" />
-        <polygon points="-12,0 -9,-2 -6,0 -9,2" fill="url(#goldGradient)" />
+        <line x1="-58" y1="0" x2="-14" y2="0" stroke="#0B2240" strokeWidth="1.5" strokeLinecap="round" />
+        <polygon points="-12,0 -9,-2.5 -6,0 -9,2.5" fill="url(#goldGradient)" />
 
         {/* Center Golden Circle Bead */}
-        <circle cx="0" cy="0" r="3.8" fill="url(#goldGradient)" />
+        <circle cx="0" cy="0" r="4.2" fill="url(#goldGradient)" stroke="#FFFFFF" strokeWidth="0.8" />
 
         {/* Right tapered line */}
-        <polygon points="6,0 9,-2 12,0 9,2" fill="url(#goldGradient)" />
-        <line x1="14" y1="0" x2="55" y2="0" stroke="#0B2240" strokeWidth="1.5" strokeLinecap="round" />
+        <polygon points="6,0 9,-2.5 12,0 9,2.5" fill="url(#goldGradient)" />
+        <line x1="14" y1="0" x2="58" y2="0" stroke="#0B2240" strokeWidth="1.5" strokeLinecap="round" />
       </g>
     </svg>
   );
