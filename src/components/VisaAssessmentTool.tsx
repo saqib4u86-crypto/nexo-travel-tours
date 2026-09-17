@@ -51,7 +51,7 @@ export const VisaAssessmentTool: React.FC<VisaAssessmentToolProps> = ({
             Instant Visa Eligibility &amp; Checklist Calculator
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Select your nationality, destination, and travel purpose to view exact documents, turnaround times, and fee breakdowns.
+            Select your nationality, destination, and travel purpose to view exact documents, turnaround times, and filing guidelines.
           </p>
         </div>
 
@@ -194,9 +194,9 @@ export const VisaAssessmentTool: React.FC<VisaAssessmentToolProps> = ({
               </div>
 
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                <span className="text-[11px] text-slate-400 font-medium block">Estimated Embassy &amp; Fee</span>
-                <span className="font-extrabold text-sm text-[#E67E22] block mt-0.5">
-                  {currencySymbol}{visaFee}
+                <span className="text-[11px] text-slate-400 font-medium block">Advisory &amp; Support</span>
+                <span className="font-extrabold text-sm text-[#00A8CC] block mt-0.5">
+                  Pre-Check &amp; Filing
                 </span>
               </div>
             </div>

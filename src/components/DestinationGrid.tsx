@@ -159,9 +159,9 @@ export const DestinationGrid: React.FC<DestinationGridProps> = ({
                     <div className="flex items-center justify-between text-slate-600">
                       <span className="flex items-center gap-1 text-slate-500">
                         <FileText className="w-3.5 h-3.5 text-[#E67E22]" />
-                        Visa Fee Est:
+                        Advisory Support:
                       </span>
-                      <span className="font-bold text-[#E67E22]">{currencySymbol}{visaFee}</span>
+                      <span className="font-bold text-emerald-600">Full Guidance</span>
                     </div>
 
                     <div className="flex items-center justify-between text-slate-600">
@@ -188,18 +188,20 @@ export const DestinationGrid: React.FC<DestinationGridProps> = ({
                   </div>
                 </div>
 
-                {/* Card Bottom / Price & CTAs */}
+                {/* Card Bottom / Custom Tour & CTAs */}
                 <div className="p-4 pt-0 bg-white">
                   <div className="pt-2 flex items-center justify-between mb-3">
                     <div>
-                      <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold block">
-                        Tour Packages From
+                      <span className="text-[10px] uppercase tracking-wider text-[#00A8CC] font-bold block">
+                        Tour Packages
                       </span>
-                      <span className="text-base font-extrabold text-[#00A8CC]">
-                        {currencySymbol}{packagePrice}
+                      <span className="text-sm font-bold text-[#2C3E50]">
+                        Custom Itineraries
                       </span>
                     </div>
-                    <span className="text-[11px] text-slate-400 font-medium">/ person</span>
+                    <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                      Available
+                    </span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
@@ -290,9 +292,9 @@ export const DestinationGrid: React.FC<DestinationGridProps> = ({
                 <span className="font-bold text-[#00A8CC]">{selectedDestinationModal.visaType}</span>
               </div>
               <div>
-                <span className="text-slate-400 block font-medium">Estimated Fee</span>
-                <span className="font-bold text-[#E67E22]">
-                  {currencySymbol}{selectedDestinationModal.visaFeeEstimate[currency].toLocaleString()}
+                <span className="text-slate-400 block font-medium">Inquiries &amp; Advisory</span>
+                <span className="font-bold text-[#00A8CC]">
+                  Consultation Desk
                 </span>
               </div>
               <div className="col-span-2 sm:col-span-1">

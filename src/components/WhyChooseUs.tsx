@@ -26,8 +26,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       icon: <Lock className="w-6 h-6 text-[#00A8CC]" />,
-      title: '100% Transparent Pricing',
-      description: 'Zero hidden embassy markups or surprise service charges. Itemized quotes provided before application lodge.'
+      title: 'Transparent Advisory',
+      description: 'Clear documentation requirements and upfront process roadmaps before application lodging with zero surprises.'
     },
     {
       icon: <Users className="w-6 h-6 text-[#E67E22]" />,

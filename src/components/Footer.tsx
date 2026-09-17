@@ -150,18 +150,20 @@ export const Footer: React.FC<FooterProps> = ({
           </h4>
           <ul className="space-y-2 text-xs text-slate-300">
             <li>
+              <button onClick={() => handleLinkClick('dubai-visa')} className="hover:text-[#00A8CC] transition-colors flex items-center gap-1.5">
+                <span>🇦🇪 Dubai Visit Visa (30/60 Days)</span>
+                <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-bold">24-72h</span>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleLinkClick('turkey-visa')} className="hover:text-[#00A8CC] transition-colors flex items-center gap-1.5">
+                <span>🇹🇷 Turkey Visa &amp; Anatolia Audit</span>
+                <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-bold">Free Eval</span>
+              </button>
+            </li>
+            <li>
               <button onClick={() => handleLinkClick('destinations')} className="hover:text-[#00A8CC] transition-colors">
                 Azerbaijan Express E-Visa
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleLinkClick('destinations')} className="hover:text-[#00A8CC] transition-colors">
-                Turkey Tourist &amp; E-Visa
-              </button>
-            </li>
-            <li>
-              <button onClick={() => handleLinkClick('destinations')} className="hover:text-[#00A8CC] transition-colors">
-                Dubai UAE 30/60 Days Visa
               </button>
             </li>
             <li>

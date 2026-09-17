@@ -16,10 +16,10 @@ export const FloatingWhatsApp: React.FC = () => {
   const [sentMessage, setSentMessage] = useState(false);
 
   const quickPrompts = [
-    '👋 Hi Nexo Travel, I need an Azerbaijan E-Visa urgently.',
-    '✈️ I want information & pricing for the Turkey Tour Package.',
-    '🕋 Please share available 5-star Umrah packages & visas.',
-    '🏖️ Looking for Dubai holiday packages for my family.'
+    '🇦🇪 Hi Nexo Travel, please send me the Dubai Visit Visa (30/60 Days) checklist.',
+    '🇹🇷 Hi Nexo Travel, I need a free file evaluation for a Turkey Visa from Pakistan.',
+    '✈️ Hi Nexo Travel, I want urgent Azerbaijan / Central Asia E-Visa assistance.',
+    '🕋 Hi Nexo Travel, please share Umrah visa & tailored packages.'
   ];
 
   const handleSendMessage = (msgText: string) => {
@@ -58,9 +58,12 @@ export const FloatingWhatsApp: React.FC = () => {
                   <span>Nexo Travel Support</span>
                   <ShieldCheck className="w-3.5 h-3.5 text-[#00A8CC]" />
                 </h4>
-                <div className="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
+                <div className="text-[10px] text-amber-300 font-semibold flex items-center gap-1">
+                  <span>Verified Travel &amp; Visa Advisory</span>
+                </div>
+                <div className="text-[11px] text-emerald-400 font-medium flex items-center gap-1 mt-0.5">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                  <span>+92 320 5718477 • Online</span>
+                  <span>+92 320 5718477 • Online Now</span>
                 </div>
               </div>
             </div>

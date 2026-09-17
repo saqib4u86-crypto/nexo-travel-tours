@@ -125,6 +125,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </button>
         </div>
 
+        {/* High-Converting Visa Quick Shortcuts Strip */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto">
+          <button
+            onClick={() => onNavigate('dubai-visa')}
+            className="px-3.5 py-1.5 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/40 text-cyan-300 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-xs transform hover:scale-105"
+          >
+            <span>🇦🇪 Dubai Visit Visa (30/60 Days)</span>
+            <span className="px-1.5 py-0.2 text-[9px] rounded-full bg-emerald-500 text-white font-black">24-72h</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('turkey-visa')}
+            className="px-3.5 py-1.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-xs transform hover:scale-105"
+          >
+            <span>🇹🇷 Turkey Visa &amp; Anatolia Audit</span>
+            <span className="px-1.5 py-0.2 text-[9px] rounded-full bg-[#E67E22] text-white font-black">Free Eval</span>
+          </button>
+
+          <div className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+            <span>Verified Travel &amp; Visa Advisory</span>
+          </div>
+        </div>
+
         {/* Interactive Quick Search / Filter Card */}
         <div className="mt-12 w-full max-w-5xl bg-white/95 backdrop-blur-md text-[#2C3E50] rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/40">
           {/* Service Selector Tabs */}
@@ -285,8 +309,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="w-9 h-9 rounded-xl bg-[#E67E22]/20 text-[#E67E22] flex items-center justify-center mx-auto mb-2.5 group-hover:scale-110 transition-transform">
               <ShieldCheck className="w-5 h-5" />
             </div>
-            <div className="text-sm sm:text-base font-bold text-white tracking-wide">Pure Transparency</div>
-            <div className="text-xs text-slate-300 font-medium mt-0.5">Zero Hidden Charges or Markups</div>
+            <div className="text-sm sm:text-base font-bold text-white tracking-wide">Rigorous Compliance</div>
+            <div className="text-xs text-slate-300 font-medium mt-0.5">Embassy-Grade Documentation Standard</div>
           </div>
         </div>
 

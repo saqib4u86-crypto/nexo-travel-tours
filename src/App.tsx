@@ -15,6 +15,8 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
+import { DubaiVisaSection } from './components/DubaiVisaSection';
+import { TurkeyVisaSection } from './components/TurkeyVisaSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -74,6 +76,18 @@ export default function App() {
               selectedDestinationId={selectedDestinationForView}
             />
 
+            {/* High-Converting Visa Landing Section 1: Dubai Visit Visa */}
+            <DubaiVisaSection
+              currency={currency}
+              onOpenConsultationModal={handleOpenConsultationModal}
+            />
+
+            {/* High-Converting Visa Landing Section 2: Turkey Visa & Anatolia Audit */}
+            <TurkeyVisaSection
+              currency={currency}
+              onOpenConsultationModal={handleOpenConsultationModal}
+            />
+
             {/* Featured Tour Packages */}
             <TourPackagesSection
               currency={currency}
@@ -103,6 +117,38 @@ export default function App() {
             {/* Contact & Branch Info */}
             <ContactSection />
           </>
+        )}
+
+        {currentPage === 'dubai-visa' && (
+          <div className="animate-in fade-in duration-300">
+            <DubaiVisaSection
+              currency={currency}
+              onOpenConsultationModal={handleOpenConsultationModal}
+              isStandalonePage={true}
+            />
+            <div className="bg-slate-100 py-12">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                <WhyChooseUs />
+              </div>
+            </div>
+            <TestimonialsSection />
+          </div>
+        )}
+
+        {currentPage === 'turkey-visa' && (
+          <div className="animate-in fade-in duration-300">
+            <TurkeyVisaSection
+              currency={currency}
+              onOpenConsultationModal={handleOpenConsultationModal}
+              isStandalonePage={true}
+            />
+            <div className="bg-slate-100 py-12">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                <WhyChooseUs />
+              </div>
+            </div>
+            <TestimonialsSection />
+          </div>
         )}
 
         {currentPage === 'destinations' && (

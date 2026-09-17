@@ -40,8 +40,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     },
     { 
       icon: <HeartHandshake className="w-6 h-6 text-[#00A8CC]" />, 
-      title: 'Radical Transparency', 
-      desc: 'Clear, itemized fee structures with zero hidden markups, surprise embassy add-ons, or fine-print traps.' 
+      title: 'Ethical Advisory', 
+      desc: 'Strictly professional guidance with complete clarity on requirements and zero fine-print traps.' 
     },
     { 
       icon: <Clock className="w-6 h-6 text-[#E67E22]" />, 

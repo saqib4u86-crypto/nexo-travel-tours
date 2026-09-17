@@ -12,7 +12,8 @@ import {
   FileCheck, 
   ChevronRight,
   Globe2,
-  Sparkles
+  Sparkles,
+  ShieldCheck
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -34,10 +35,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems: { id: PageView; label: string; badge?: string }[] = [
     { id: 'home', label: 'Home' },
-    { id: 'destinations', label: 'Destinations' },
+    { id: 'dubai-visa', label: 'Dubai Visa', badge: '24–72h' },
+    { id: 'turkey-visa', label: 'Turkey Visa', badge: 'File Audit' },
     { id: 'packages', label: 'Tour Packages', badge: 'Hot' },
-    { id: 'services', label: 'Services' },
-    { id: 'visa-guide', label: 'Visa Guide & Checker' },
+    { id: 'destinations', label: 'Destinations' },
+    { id: 'visa-guide', label: 'Visa Checker' },
     { id: 'about', label: 'About Us' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -54,8 +56,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="bg-[#2C3E50] text-slate-200 text-xs py-2 px-4 sm:px-8 border-b border-slate-700">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           
-          {/* Left: Official Urdu Slogan in Warm Sunset Orange */}
-          <div className="flex items-center gap-2">
+          {/* Left: Official Urdu Slogan & Trust Badge */}
+          <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] text-[11px] font-semibold">
               <Sparkles className="w-3 h-3 text-[#E67E22]" />
               Official Motto
@@ -68,6 +70,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 (Manzil Soch ki Dehleez par)
               </span>
             </div>
+            <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 text-[10px] font-bold border border-cyan-500/30">
+              <ShieldCheck className="w-3 h-3 text-cyan-400" />
+              Verified Travel &amp; Visa Advisory
+            </span>
           </div>
 
           {/* Right: Contact Numbers & Currency Switcher */}

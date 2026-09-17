@@ -97,13 +97,13 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
                 </div>
 
                 <div className="mt-2">
-                  <span className="text-xs text-slate-400 uppercase tracking-wider font-bold block">
-                    Total Package Price
+                  <span className="text-xs text-[#00A8CC] uppercase tracking-wider font-bold block">
+                    Custom Tour Plan
                   </span>
-                  <div className="text-2xl sm:text-3xl font-black text-[#00A8CC]">
-                    {currencySymbol}{price}
+                  <div className="text-xl sm:text-2xl font-extrabold text-[#2C3E50]">
+                    Quote on Request
                   </div>
-                  <span className="text-xs text-slate-500">per person (twin-sharing)</span>
+                  <span className="text-xs text-slate-500">Tailored to your travel dates, flights &amp; hotel category</span>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-200 space-y-2 text-xs text-slate-600">

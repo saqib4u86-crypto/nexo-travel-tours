@@ -175,17 +175,19 @@ export const TourPackagesSection: React.FC<TourPackagesSectionProps> = ({
                     )}
                   </div>
 
-                  {/* Price Block */}
-                  <div className="pt-3 border-t border-slate-100 flex items-baseline justify-between">
+                  {/* Package Consultation Block */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold block">
-                        All-Inclusive From
+                      <span className="text-[10px] uppercase tracking-wider text-[#00A8CC] font-bold block">
+                        Customized Package
                       </span>
-                      <div className="text-xl sm:text-2xl font-black text-[#00A8CC]">
-                        {currencySymbol}{price}
+                      <div className="text-sm sm:text-base font-bold text-[#2C3E50]">
+                        Tailored Itinerary
                       </div>
                     </div>
-                    <span className="text-xs text-slate-500">per person</span>
+                    <span className="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60">
+                      Quote on Request
+                    </span>
                   </div>
 
                   {/* Action Buttons */}
