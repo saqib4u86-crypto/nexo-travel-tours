@@ -225,7 +225,7 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
             <span className="font-urdu text-[#E67E22] text-sm font-bold">
               منزل سوچ کی دہلیز پر
             </span>
-            <span className="text-xs text-slate-500 hidden sm:inline">• Nexo Quality Guarantee</span>
+            <span className="text-xs text-slate-500 hidden sm:inline">• Nexo Quality Assurance</span>
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">

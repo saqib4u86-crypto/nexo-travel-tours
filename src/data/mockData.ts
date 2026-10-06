@@ -616,7 +616,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     benefits: [
       'Thorough pre-submission document verification by senior consultants',
       'High-probability interview coaching and mock Q&A sessions',
-      'Guaranteed authentic hotel vouchers and flight itineraries for embassies',
+      'Verified authentic hotel vouchers and flight itineraries for embassies',
       'Real-time tracking of application status via SMS & WhatsApp'
     ],
     supportedCountries: ['Azerbaijan', 'Turkey', 'UAE', 'Saudi Arabia', 'Malaysia', 'Thailand', 'UK', 'USA', 'Schengen (29 Countries)', 'Canada', 'Australia', 'Singapore', 'Japan'],
@@ -644,7 +644,7 @@ export const SERVICES_LIST: ServiceDetail[] = [
     iconName: 'Plane',
     fullDesc: 'Access private corporate airfares, seasonal promo seats, and flexible itinerary planning across top global carriers including Emirates, Qatar Airways, Turkish Airlines, Saudia, PIA, FlyDubai, Air Arabia, British Airways, and Singapore Airlines.',
     benefits: [
-      'Best price guarantee on economy, premium economy, and business class',
+      'Competitive transparent rates on economy, premium economy, and business class',
       'Instant date changes and reissue support without endless hold times',
       'Group travel discounts for 10+ passengers',
       'Free seat selection and special dietary meal arrangements'

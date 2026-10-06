@@ -238,12 +238,27 @@ export const Footer: React.FC<FooterProps> = ({
             &copy; {new Date().getFullYear()} NEXO TRAVEL &amp; TOURS. All rights reserved. 
             <span className="font-urdu text-[#E67E22] ml-2 text-xs">منزل سوچ کی دہلیز پر</span>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="hover:text-slate-200 cursor-pointer">Privacy Policy</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
+            <button 
+              onClick={() => handleLinkClick('privacy-policy')} 
+              className="hover:text-white transition-colors cursor-pointer underline-offset-2 hover:underline"
+            >
+              Privacy Policy
+            </button>
             <span>•</span>
-            <span className="hover:text-slate-200 cursor-pointer">Terms of Service</span>
+            <button 
+              onClick={() => handleLinkClick('terms-of-service')} 
+              className="hover:text-white transition-colors cursor-pointer underline-offset-2 hover:underline"
+            >
+              Terms of Service
+            </button>
             <span>•</span>
-            <span className="hover:text-slate-200 cursor-pointer">Visa Guarantee Policy</span>
+            <button 
+              onClick={() => handleLinkClick('terms-of-service')} 
+              className="hover:text-white transition-colors cursor-pointer underline-offset-2 hover:underline"
+            >
+              Visa Advisory Policy
+            </button>
           </div>
         </div>
       </div>

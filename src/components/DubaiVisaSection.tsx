@@ -575,7 +575,7 @@ export const DubaiVisaSection: React.FC<DubaiVisaSectionProps> = ({
               </div>
               <h4 className="font-bold text-sm text-white">30-Min Document Pre-Check</h4>
               <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
-                Our licensed consultants review your papers against UAE immigration rules to guarantee zero rejection risk.
+                Our licensed consultants review your papers against UAE immigration rules to maximize approval prospects.
               </p>
             </div>
 

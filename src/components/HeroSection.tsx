@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Value Proposition Description */}
         <p className="mt-5 text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl leading-relaxed font-normal">
-          Premier visa consultancy, guaranteed flight bookings, and tailor-made international tour packages. Fast approvals, 100% transparent processing, and expert guidance for Azerbaijan, Turkey, UAE, Malaysia, Saudi Arabia, and beyond.
+          Premier visa consultancy, confirmed flight bookings, and tailor-made international tour packages. Fast approvals, 100% transparent processing, and expert guidance for Azerbaijan, Turkey, UAE, Malaysia, Saudi Arabia, and beyond.
         </p>
 
         {/* Primary Call-to-Action (CTA) Buttons */}

@@ -17,6 +17,8 @@ import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { DubaiVisaSection } from './components/DubaiVisaSection';
 import { TurkeyVisaSection } from './components/TurkeyVisaSection';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -221,6 +223,24 @@ export default function App() {
         {currentPage === 'contact' && (
           <div className="pt-4 animate-in fade-in duration-300">
             <ContactSection />
+          </div>
+        )}
+
+        {currentPage === 'privacy-policy' && (
+          <div className="animate-in fade-in duration-300">
+            <PrivacyPolicyPage
+              onNavigate={handleNavigate}
+              onOpenConsultationModal={() => handleOpenConsultationModal()}
+            />
+          </div>
+        )}
+
+        {currentPage === 'terms-of-service' && (
+          <div className="animate-in fade-in duration-300">
+            <TermsOfServicePage
+              onNavigate={handleNavigate}
+              onOpenConsultationModal={() => handleOpenConsultationModal()}
+            />
           </div>
         )}
       </main>

@@ -1,4 +1,4 @@
-export type PageView = 'home' | 'dubai-visa' | 'turkey-visa' | 'destinations' | 'packages' | 'services' | 'visa-guide' | 'about' | 'contact';
+export type PageView = 'home' | 'dubai-visa' | 'turkey-visa' | 'destinations' | 'packages' | 'services' | 'visa-guide' | 'about' | 'contact' | 'privacy-policy' | 'terms-of-service';
 
 export type Currency = 'USD' | 'PKR' | 'AED' | 'EUR';
 

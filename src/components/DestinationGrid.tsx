@@ -59,7 +59,7 @@ export const DestinationGrid: React.FC<DestinationGridProps> = ({
               Top Global &amp; Regional Travel Hubs
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-              From instant e-visas to comprehensive holiday packages, explore our highest-rated destinations with guaranteed visa support.
+              From instant e-visas to comprehensive holiday packages, explore our highest-rated destinations with verified visa support.
             </p>
           </div>
 
