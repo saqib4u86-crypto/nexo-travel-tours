@@ -540,6 +540,297 @@ export const TOUR_PACKAGES: TourPackage[] = [
     badge: 'Spiritual Excellence'
   },
   {
+    id: 'umrah-family-15d',
+    title: '15-Day Deluxe Family Umrah & Complete Historical Ziyarat',
+    destinationId: 'saudi-arabia',
+    destinationName: 'Makkah & Madinah, Saudi Arabia',
+    durationDays: 15,
+    durationNights: 14,
+    category: 'Umrah & Spiritual',
+    image: 'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80'
+    ],
+    hotelRating: 5,
+    pricePerPerson: {
+      USD: 0,
+      PKR: 0,
+      AED: 0,
+      EUR: 0
+    },
+    inclusions: [
+      '8 Nights Makkah at 5-Star Hotel within close walking distance to Haram (Anjum / Jabal Omar)',
+      '6 Nights Madinah at 5-Star Markazia Central Area Hotel (Pullman Zamzam / Frontel)',
+      'Saudi Tourist / Umrah E-Visa with full medical health insurance',
+      'Dedicated family air-conditioned private vehicle / High-Speed Haramain Bullet Train',
+      'Complete Sacred Ziyarat in Makkah (Ghar-e-Hira, Jabal-e-Noor, Mina, Arafat, Muzdalifah)',
+      'Detailed Madinah Historical Ziyarat (Masjid Quba, Mount Uhud, Masjid Qiblatain, Khandaq)',
+      'Official Nusuk App permit arrangement for Rawdah Mubarak (Riaz-ul-Jannah)',
+      'Complimentary 5-Litre Zamzam water packed container per passenger on departure'
+    ],
+    exclusions: [
+      'International flights (custom airline bundle available: PIA, Saudia, Emirates, FlyJinnah)',
+      'Personal room service, telephone, and laundry expenses'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Arrival in Jeddah & VIP Transfer to Makkah Mukarramah',
+        description: 'Meet and assist by Nexo representative at King Abdulaziz International Airport (Jeddah). Chauffeur-driven transfer to your Makkah hotel. Check-in, brief relaxation, and guided performance of your first Umrah.'
+      },
+      {
+        day: 2,
+        title: 'Spiritual Devotion in Masjid al-Haram',
+        description: 'Spend your day immersed in prayers, recitation, and circumambulation (Tawaf) around the Holy Kaaba.'
+      },
+      {
+        day: 3,
+        title: 'Historic Makkah Ziyarat Tour',
+        description: 'Private tour to Jabal-e-Noor (Cave Hira), Jabal Thawr, Mina, Plains of Arafat, and Muzdalifah with knowledgeable Urdu/English guide.'
+      },
+      {
+        day: 4,
+        title: 'Second Optional Umrah via Masjid Aisha (Tan\'eem)',
+        description: 'Arranged transport to Masjid Aisha for Ihram renewal for family members wishing to perform Umrah for relatives.'
+      },
+      {
+        day: 5,
+        title: 'Quranic Exhibition & Holy Kaaba Architecture Tour',
+        description: 'Optional visit to the Two Holy Mosques Architecture Exhibition and local Islamic cultural centers.'
+      },
+      {
+        day: 6,
+        title: 'Tahajjud Prayers & Family Spiritual Gathering',
+        description: 'Night devotion at Mataf followed by family breakfast overlooking the Haram.'
+      },
+      {
+        day: 7,
+        title: 'Free Day for Personal Devotion & Souvenirs',
+        description: 'Time for personal prayers, Islamic book shopping, and local dates markets in Makkah.'
+      },
+      {
+        day: 8,
+        title: 'Farewell Tawaf (Tawaf-al-Wida) & Departure Prep',
+        description: 'Completion of farewell Tawaf around Kaaba in preparation for journey to the Prophet\'s City.'
+      },
+      {
+        day: 9,
+        title: 'Scenic Journey to Madinah al-Munawwarah',
+        description: 'Travel via Haramain High-Speed Train or luxury private coach to Madinah. Check-in at Markazia hotel steps from Bab-as-Salam.'
+      },
+      {
+        day: 10,
+        title: 'Salam at Rawdah Sharif (Riaz-ul-Jannah)',
+        description: 'Attending facilitated appointment at Rawdah Sharif through Nusuk portal to offer Salam to the Beloved Prophet Muhammad ﷺ and his noble companions.'
+      },
+      {
+        day: 11,
+        title: 'Full Day Madinah Historical Ziyarat',
+        description: 'Spiritual visit to Masjid Quba (prayer rewards equivalent to an Umrah), Mount Uhud and martyrs\' graves, and Masjid al-Qiblatain.'
+      },
+      {
+        day: 12,
+        title: 'Seven Mosques (Saba Masajid) & Dates Market',
+        description: 'Tour of the historic battle site of Khandaq (Trench) and excursion to the famous Madinah Date Souq for authentic Ajwa and Amber.'
+      },
+      {
+        day: 13,
+        title: 'King Fahd Holy Quran Printing Complex',
+        description: 'Guided tour of the world\'s largest Quran printing press in Madinah (subject to opening timings).'
+      },
+      {
+        day: 14,
+        title: 'Day of Intense Ibadah & Peaceful Salam',
+        description: 'Spiritual moments in the sacred serenity of Masjid an-Nabawi courtyard under the shaded canopies.'
+      },
+      {
+        day: 15,
+        title: 'Departure Transfer with Zamzam',
+        description: 'Assisted check-out and private transfer to Prince Mohammad Bin Abdulaziz International Airport (Madinah) or Jeddah for your flight back home.'
+      }
+    ],
+    badge: 'Family Favorite'
+  },
+  {
+    id: 'umrah-economy-14d',
+    title: '14-Day Budget-Friendly Economy Umrah Group Package',
+    destinationId: 'saudi-arabia',
+    destinationName: 'Makkah & Madinah, Saudi Arabia',
+    durationDays: 14,
+    durationNights: 13,
+    category: 'Umrah & Spiritual',
+    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80'
+    ],
+    hotelRating: 4,
+    pricePerPerson: {
+      USD: 0,
+      PKR: 0,
+      AED: 0,
+      EUR: 0
+    },
+    inclusions: [
+      '7 Nights Makkah Hotel (Comfortable 350-500m walk or 24/7 complimentary shuttle to Haram courtyard)',
+      '6 Nights Madinah Hotel (Central Markazia North / South within easy walking proximity)',
+      'Complete Saudi Umrah Visa & medical travel insurance included',
+      'Air-conditioned coaster / luxury bus transport for all inter-city transfers',
+      'Group Ziyarat tours in both Makkah and Madinah with experienced religious group leader',
+      'Assistance with Nusuk App for Rawdah Mubarak slot registration',
+      'Packed 5-Litre Zamzam water voucher per pilgrim'
+    ],
+    exclusions: [
+      'International flights (flexible group airfare bookings available)',
+      'Daily meals other than hotel breakfast (half-board / full-board available on request)'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Group Arrival & Joint First Umrah',
+        description: 'Arrival at Jeddah airport, group boarding to Makkah, hotel check-in, and collective performance of Umrah under group leader.'
+      },
+      {
+        day: 2,
+        title: 'Prayers in Masjid al-Haram',
+        description: 'Individual and group prayers in the sacred precincts of the Holy Kaaba.'
+      },
+      {
+        day: 3,
+        title: 'Guided Makkah Ziyarat Tour',
+        description: 'Organized coach tour to Cave Hira, Cave Thawr, Arafat, and Mina with Urdu religious commentary.'
+      },
+      {
+        day: 4,
+        title: 'Tan\'eem Ziyarat & Second Umrah Option',
+        description: 'Transport provided to Masjid Aisha for pilgrims performing additional Umrah for parents or elders.'
+      },
+      {
+        day: 5,
+        title: 'Spiritual Lecture & Group Dua',
+        description: 'Evening gathering with religious counselor on the etiquettes of Hajj and Umrah.'
+      },
+      {
+        day: 6,
+        title: 'Day of Devotion & Tawaf',
+        description: 'Full day for prayers, Quran recitation, and optional Tawaf.'
+      },
+      {
+        day: 7,
+        title: 'Tawaf-al-Wida in Makkah',
+        description: 'Performing the farewell circumambulation around the Holy Kaaba before packing.'
+      },
+      {
+        day: 8,
+        title: 'Group Transfer to Madinah Munawwarah',
+        description: 'Luxury AC coach transfer to Madinah. Arrival and first emotional Salam at the Prophet\'s Mosque.'
+      },
+      {
+        day: 9,
+        title: 'Riaz-ul-Jannah Nusuk Schedule',
+        description: 'Group assistance entering Rawdah Sharif based on assigned Nusuk appointment times.'
+      },
+      {
+        day: 10,
+        title: 'Madinah Historical Ziyarat',
+        description: 'Bus excursion to Masjid Quba, Mount Uhud, and Masjid Qiblatain with group explanation.'
+      },
+      {
+        day: 11,
+        title: 'Visit to Famous Madinah Date Market',
+        description: 'Shopping excursion for Ajwa, Safawi, and Sukari dates directly from authentic traders.'
+      },
+      {
+        day: 12,
+        title: 'Spiritual Reflections at Masjid an-Nabawi',
+        description: 'Day of peace and contemplation in the courtyard of the Prophet\'s Mosque.'
+      },
+      {
+        day: 13,
+        title: 'Farewell Salam at Bab-as-Salam',
+        description: 'Offering final Salam to the Messenger of Allah ﷺ before departure.'
+      },
+      {
+        day: 14,
+        title: 'Return Airport Transfer',
+        description: 'Assisted group bus transfer to Madinah or Jeddah airport for departure back to Pakistan.'
+      }
+    ],
+    badge: 'Affordable Group Plan'
+  },
+  {
+    id: 'umrah-executive-7d',
+    title: '7-Day Executive Express Umrah & Sacred Retreat',
+    destinationId: 'saudi-arabia',
+    destinationName: 'Makkah & Madinah, Saudi Arabia',
+    durationDays: 7,
+    durationNights: 6,
+    category: 'Umrah & Spiritual',
+    image: 'https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80'
+    ],
+    hotelRating: 5,
+    pricePerPerson: {
+      USD: 0,
+      PKR: 0,
+      AED: 0,
+      EUR: 0
+    },
+    inclusions: [
+      '4 Nights in Makkah (5-Star Luxury Clock Tower Fairmont / Raffles / Swissotel with Kaaba View)',
+      '2 Nights in Madinah (5-Star Luxury Oberoi / Dar Al Taqwa steps from Rawdah gate)',
+      'Express Umrah E-Visa issued within 12-24 hours',
+      'Private luxury GMC Yukon or Mercedes transfer between airport, hotels, and Haramain Station',
+      'First Class Business Bullet Train tickets between Makkah and Madinah',
+      'Priority VIP Nusuk reservation support for Riaz-ul-Jannah',
+      'Private historical Ziyarat tour with senior English/Urdu guide',
+      '24/7 dedicated personal concierge travel manager'
+    ],
+    exclusions: [
+      'Business / Economy international flights (direct seat reservation assistance available)'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'VIP Arrival & Direct Kaaba Suite Check-In',
+        description: 'Chauffeured luxury SUV pickup from Jeddah Airport. Fast-track suite check-in overlooking the Holy Kaaba. First Umrah performed with personal guide.'
+      },
+      {
+        day: 2,
+        title: 'Intensive Spiritual Solitude in Haram',
+        description: 'Private spiritual retreat in Mataf and Upper Balconies of Masjid al-Haram.'
+      },
+      {
+        day: 3,
+        title: 'Private Makkah Ziyarat in Luxury Chauffeur',
+        description: 'Exclusive vehicle tour of Jabal-e-Noor, Cave Thawr, and historical sites at your own pace.'
+      },
+      {
+        day: 4,
+        title: 'Haramain Business Bullet Train to Madinah',
+        description: 'Relax in First Class bullet train lounge. Swift arrival in Madinah and check-in to luxury hotel fronting the Green Dome.'
+      },
+      {
+        day: 5,
+        title: 'VIP Rawdah Mubarak Entry & Uhud Ziyarat',
+        description: 'Priority Nusuk appointment for Rawdah Sharif. Private afternoon visit to Mount Uhud and Masjid Quba.'
+      },
+      {
+        day: 6,
+        title: 'Day of Contemplation & Farewell Salam',
+        description: 'Private moments at Masjid an-Nabawi and final Salam before the Prophet\'s chamber.'
+      },
+      {
+        day: 7,
+        title: 'Executive Airport Chauffeur & Departure',
+        description: 'Luggage assistance, airport VIP lounge escort, and flight departure with 5L Zamzam package.'
+      }
+    ],
+    badge: 'Executive VIP Luxury'
+  },
+  {
     id: 'malaysia-tropical-6d',
     title: '6-Day Malaysia Twin Towers & Langkawi Beach Bliss',
     destinationId: 'malaysia-kl',

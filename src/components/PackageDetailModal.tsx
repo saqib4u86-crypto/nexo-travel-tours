@@ -13,7 +13,9 @@ import {
   ShieldCheck, 
   Send,
   Sparkles,
-  PhoneCall
+  PhoneCall,
+  Moon,
+  MessageCircle
 } from 'lucide-react';
 
 interface PackageDetailModalProps {
@@ -32,8 +34,13 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
   if (!tourPackage) return null;
 
   const [activeDay, setActiveDay] = useState<number>(1);
-  const currencySymbol = CURRENCY_SYMBOLS[currency] || '$';
-  const price = tourPackage.pricePerPerson[currency].toLocaleString();
+  const isUmrah = tourPackage.category === 'Umrah & Spiritual';
+
+  const handleWhatsAppInquiry = () => {
+    const text = `As-salamu alaykum! I am interested in the "${tourPackage.title}". Please provide full package details, dates, and accommodation options.`;
+    const encoded = encodeURIComponent(text);
+    window.open(`https://api.whatsapp.com/send?phone=923205718477&text=${encoded}`, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs p-3 sm:p-6 overflow-y-auto">
@@ -61,6 +68,28 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
         {/* Modal Body */}
         <div className="p-6 space-y-6">
           
+          {/* Religious Script Banner for Umrah Packages */}
+          {isUmrah && (
+            <div className="p-4 rounded-2xl bg-gradient-to-r from-[#064E3B] via-[#094837] to-[#042820] text-[#FCEAA1] border border-[#D4AF37]/50 shadow-md flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] flex items-center justify-center shrink-0">
+                  <Moon className="w-4 h-4 text-[#D4AF37]" />
+                </div>
+                <div>
+                  <div className="font-arabic text-base sm:text-lg font-bold text-[#FCEAA1] tracking-wide">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ &bull; لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ
+                  </div>
+                  <div className="text-[11px] text-emerald-200">
+                    Sacred Pilgrimage to Makkah al-Mukarramah &amp; Madinah al-Munawwarah
+                  </div>
+                </div>
+              </div>
+              <div className="font-urdu text-[#FCEAA1] text-sm font-bold shrink-0">
+                منزل سوچ کی دہلیز پر
+              </div>
+            </div>
+          )}
+
           {/* Main Visual & Key Stats Banner */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="md:col-span-2 relative h-64 sm:h-72 rounded-xl overflow-hidden shadow-inner">
@@ -72,7 +101,7 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <div className="flex items-center gap-1 text-xs text-amber-300 font-semibold mb-1">
-                  <MapPin className="w-4 h-4 text-[#E67E22]" />
+                  {isUmrah ? '🕋' : <MapPin className="w-4 h-4 text-[#E67E22]" />}
                   <span>{tourPackage.destinationName}</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -88,51 +117,90 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
               </div>
             </div>
 
-            {/* Price & Summary Box */}
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+            {/* Price & Summary Box - NO PRICE MENTIONED, CONTACT FOR DETAILS */}
+            <div className={`p-5 rounded-xl border flex flex-col justify-between ${
+              isUmrah 
+                ? 'bg-emerald-50/60 border-[#D4AF37]/50' 
+                : 'bg-slate-50 border-slate-200/80'
+            }`}>
               <div>
                 <div className="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-1">
-                  <Clock className="w-4 h-4 text-[#00A8CC]" />
+                  <Clock className={`w-4 h-4 ${isUmrah ? 'text-[#064E3B]' : 'text-[#00A8CC]'}`} />
                   <span>{tourPackage.durationDays} Days / {tourPackage.durationNights} Nights</span>
                 </div>
 
                 <div className="mt-2">
-                  <span className="text-xs text-[#00A8CC] uppercase tracking-wider font-bold block">
-                    Custom Tour Plan
+                  <span className={`text-xs uppercase tracking-wider font-extrabold block ${
+                    isUmrah ? 'text-[#064E3B]' : 'text-[#00A8CC]'
+                  }`}>
+                    {isUmrah ? 'Spiritual Umrah Package' : 'Custom Tour Plan'}
                   </span>
-                  <div className="text-xl sm:text-2xl font-extrabold text-[#2C3E50]">
-                    Quote on Request
+                  <div className={`text-xl sm:text-2xl font-extrabold ${
+                    isUmrah ? 'text-[#064E3B]' : 'text-[#2C3E50]'
+                  }`}>
+                    Contact for Details
                   </div>
-                  <span className="text-xs text-slate-500">Tailored to your travel dates, flights &amp; hotel category</span>
+                  <span className="text-xs text-slate-500 block mt-1">
+                    {isUmrah 
+                      ? 'Tailored to your selected dates, room sharing (Quad / Triple / Double), and airline preferences.'
+                      : 'Tailored to your travel dates, flights & hotel category.'
+                    }
+                  </span>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-200 space-y-2 text-xs text-slate-600">
                   <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    <span>Includes Visa Assistance</span>
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>{isUmrah ? 'Saudi Visa & Medical Insurance' : 'Includes Visa Assistance'}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-[#00A8CC]" />
-                    <span>Private &amp; Group Options</span>
+                    <Users className={`w-4 h-4 shrink-0 ${isUmrah ? 'text-[#064E3B]' : 'text-[#00A8CC]'}`} />
+                    <span>{isUmrah ? 'Family, Individual & Group Sharing' : 'Private & Group Options'}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#E67E22]" />
-                    <span>Bespoke Customization Available</span>
+                    <Sparkles className="w-4 h-4 text-[#E67E22] shrink-0" />
+                    <span>{isUmrah ? 'Historical Ziyarat & Nusuk Assistance' : 'Bespoke Customization Available'}</span>
                   </div>
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={() => {
-                  onClose();
-                  onBookNow(tourPackage);
-                }}
-                className="mt-5 w-full py-3 rounded-xl bg-[#E67E22] hover:bg-[#D35400] text-white font-bold text-xs sm:text-sm shadow-md transition-colors flex items-center justify-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                <span>Book This Package Now</span>
-              </button>
+              <div className="mt-5 space-y-2">
+                {isUmrah ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={handleWhatsAppInquiry}
+                      className="w-full py-3 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-xs sm:text-sm shadow-md transition-colors flex items-center justify-center gap-2"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-white" />
+                      <span>Contact for Details (WhatsApp)</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onClose();
+                        onBookNow(tourPackage);
+                      }}
+                      className="w-full py-2.5 rounded-xl bg-[#064E3B] hover:bg-[#043327] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      <span>Book 1-on-1 Consultation</span>
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onClose();
+                      onBookNow(tourPackage);
+                    }}
+                    className="w-full py-3 rounded-xl bg-[#00A8CC] hover:bg-[#0088A8] text-white font-bold text-xs sm:text-sm shadow-md transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>Contact for Details</span>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
 
@@ -237,13 +305,21 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
             </button>
             <button
               onClick={() => {
-                onClose();
-                onBookNow(tourPackage);
+                if (isUmrah) {
+                  handleWhatsAppInquiry();
+                } else {
+                  onClose();
+                  onBookNow(tourPackage);
+                }
               }}
-              className="flex-1 sm:flex-none py-2.5 px-6 rounded-xl text-xs font-bold text-white bg-[#00A8CC] hover:bg-[#0088A8] shadow-sm transition-colors flex items-center justify-center gap-2"
+              className={`flex-1 sm:flex-none py-2.5 px-6 rounded-xl text-xs font-bold text-white shadow-sm transition-colors flex items-center justify-center gap-2 ${
+                isUmrah 
+                  ? 'bg-[#064E3B] hover:bg-[#043327]' 
+                  : 'bg-[#00A8CC] hover:bg-[#0088A8]'
+              }`}
             >
-              <Send className="w-3.5 h-3.5" />
-              <span>Inquire &amp; Reserve</span>
+              {isUmrah ? <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" /> : <Send className="w-3.5 h-3.5" />}
+              <span>{isUmrah ? 'Contact for Details' : 'Inquire & Reserve'}</span>
             </button>
           </div>
         </div>

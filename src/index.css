@@ -22,6 +22,17 @@
   direction: rtl;
 }
 
+.font-arabic {
+  font-family: 'Amiri', 'Scheherazade New', 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+}
+
+.islamic-pattern {
+  background-color: #064E3B;
+  background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
 .font-display {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
