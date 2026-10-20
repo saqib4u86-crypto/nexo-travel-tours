@@ -35,12 +35,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navItems: { id: PageView; label: string; badge?: string }[] = [
     { id: 'home', label: 'Home' },
+    { id: 'umrah', label: 'Umrah Packages', badge: '🕋 Sacred' },
+    { id: 'domestic-tours', label: 'Domestic Tours', badge: '🇵🇰' },
     { id: 'dubai-visa', label: 'Dubai Visa', badge: '24–72h' },
     { id: 'turkey-visa', label: 'Turkey Visa', badge: 'File Audit' },
-    { id: 'packages', label: 'Tour Packages', badge: 'Hot' },
+    { id: 'packages', label: 'Holiday Packages' },
     { id: 'destinations', label: 'Destinations' },
     { id: 'visa-guide', label: 'Visa Checker' },
-    { id: 'about', label: 'About Us' },
     { id: 'contact', label: 'Contact' },
   ];
 

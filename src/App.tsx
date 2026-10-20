@@ -19,6 +19,8 @@ import { DubaiVisaSection } from './components/DubaiVisaSection';
 import { TurkeyVisaSection } from './components/TurkeyVisaSection';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
+import { UmrahShowcaseSection } from './components/UmrahShowcaseSection';
+import { DomesticToursSection } from './components/DomesticToursSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -68,6 +70,18 @@ export default function App() {
               onOpenConsultationModal={handleOpenConsultationModal}
               currency={currency}
               onSelectDestination={handleSelectDestination}
+            />
+
+            {/* Extreme Religious Attraction: Umrah Packages & Sacred Sanctuary */}
+            <UmrahShowcaseSection
+              onOpenConsultationModal={handleOpenConsultationModal}
+              onNavigate={handleNavigate}
+            />
+
+            {/* Discover Pakistan: Domestic Tours Section */}
+            <DomesticToursSection
+              onOpenConsultationModal={handleOpenConsultationModal}
+              onNavigate={handleNavigate}
             />
 
             {/* Quick Destination Grid */}
@@ -241,6 +255,30 @@ export default function App() {
               onNavigate={handleNavigate}
               onOpenConsultationModal={() => handleOpenConsultationModal()}
             />
+          </div>
+        )}
+
+        {currentPage === 'umrah' && (
+          <div className="pt-2 animate-in fade-in duration-300">
+            <UmrahShowcaseSection
+              onOpenConsultationModal={handleOpenConsultationModal}
+              onNavigate={handleNavigate}
+              isStandalonePage={true}
+            />
+            <WhyChooseUs />
+            <TestimonialsSection />
+          </div>
+        )}
+
+        {currentPage === 'domestic-tours' && (
+          <div className="pt-2 animate-in fade-in duration-300">
+            <DomesticToursSection
+              onOpenConsultationModal={handleOpenConsultationModal}
+              onNavigate={handleNavigate}
+              isStandalonePage={true}
+            />
+            <WhyChooseUs />
+            <TestimonialsSection />
           </div>
         )}
       </main>

@@ -116,6 +116,18 @@ export const Footer: React.FC<FooterProps> = ({
               </button>
             </li>
             <li>
+              <button onClick={() => handleLinkClick('umrah')} className="hover:text-[#FCEAA1] transition-colors flex items-center gap-1.5 text-amber-300 font-semibold">
+                <span>🕋 Sacred Umrah Packages</span>
+                <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-400/20 text-[#FCEAA1] font-bold">New</span>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleLinkClick('domestic-tours')} className="hover:text-emerald-300 transition-colors flex items-center gap-1.5 text-emerald-300 font-semibold">
+                <span>🇵🇰 Pakistan Domestic Tours</span>
+                <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-200 font-bold">Featured</span>
+              </button>
+            </li>
+            <li>
               <button onClick={() => handleLinkClick('packages')} className="hover:text-[#00A8CC] transition-colors">
                 Holiday Tour Packages
               </button>

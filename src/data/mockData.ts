@@ -468,10 +468,10 @@ export const TOUR_PACKAGES: TourPackage[] = [
     ],
     hotelRating: 5,
     pricePerPerson: {
-      USD: 950,
-      PKR: 265000,
-      AED: 3490,
-      EUR: 875
+      USD: 0,
+      PKR: 0,
+      AED: 0,
+      EUR: 0
     },
     inclusions: [
       '5 Nights in Makkah (5-Star clock tower/proximity hotel)',

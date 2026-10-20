@@ -1,6 +1,24 @@
-export type PageView = 'home' | 'dubai-visa' | 'turkey-visa' | 'destinations' | 'packages' | 'services' | 'visa-guide' | 'about' | 'contact' | 'privacy-policy' | 'terms-of-service';
+export type PageView = 'home' | 'dubai-visa' | 'turkey-visa' | 'destinations' | 'packages' | 'services' | 'visa-guide' | 'about' | 'contact' | 'privacy-policy' | 'terms-of-service' | 'domestic-tours' | 'umrah';
 
 export type Currency = 'USD' | 'PKR' | 'AED' | 'EUR';
+
+export interface DomesticDestination {
+  id: string;
+  name: string;
+  urduName: string;
+  region: string;
+  province: 'Khyber Pakhtunkhwa' | 'Gilgit-Baltistan' | 'Punjab' | 'Azad Kashmir';
+  tagline: string;
+  description: string;
+  image: string;
+  visitingPoints: string[];
+  idealDuration: string;
+  bestSeason: string;
+  altitude?: string;
+  recommendedTransport: string;
+  highlights: string[];
+  featured?: boolean;
+}
 
 export interface Destination {
   id: string;

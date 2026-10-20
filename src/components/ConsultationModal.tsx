@@ -28,8 +28,6 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   initialDestination = 'Azerbaijan (Baku)',
   initialService = 'Tourist Visa Consultancy'
 }) => {
-  if (!isOpen) return null;
-
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -40,6 +38,18 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     preferredDate: '',
     notes: ''
   });
+
+  React.useEffect(() => {
+    if (isOpen) {
+      setFormData(prev => ({
+        ...prev,
+        destination: initialDestination || prev.destination,
+        serviceType: initialService || prev.serviceType
+      }));
+    }
+  }, [isOpen, initialDestination, initialService]);
+
+  if (!isOpen) return null;
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -177,14 +187,49 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs font-medium text-[#2C3E50] focus:ring-2 focus:ring-[#00A8CC] focus:outline-none"
                 >
-                  {DESTINATIONS.map((d) => (
-                    <option key={d.id} value={d.country}>
-                      {d.country} ({d.name})
-                    </option>
-                  ))}
-                  <option value="Schengen / Europe">Schengen / Europe (29 Countries)</option>
-                  <option value="UK / London">United Kingdom</option>
-                  <option value="Other Country">Other Country</option>
+                  <optgroup label="🕋 Spiritual & Pilgrimage">
+                    <option value="Makkah & Madinah">Makkah &amp; Madinah (Umrah &amp; Ziyarat)</option>
+                  </optgroup>
+                  <optgroup label="🇵🇰 Domestic Tours of Pakistan">
+                    <option value="Northern Pakistan Tour">Northern Pakistan Tour (Custom)</option>
+                    <option value="Swat Valley">Swat Valley (Malam Jabba &amp; Kalam)</option>
+                    <option value="Naran & Kaghan">Naran &amp; Kaghan (Saif-ul-Malook)</option>
+                    <option value="Hunza Valley & Nagar">Hunza Valley &amp; Passu Cones</option>
+                    <option value="Skardu & Baltistan">Skardu &amp; Deosai Plains</option>
+                    <option value="Azad Kashmir">Azad Kashmir (Neelum Valley)</option>
+                    <option value="Murree & Galiyat">Murree &amp; Nathia Gali</option>
+                    <option value="Chitral & Kalash">Chitral &amp; Kalash Valley</option>
+                    <option value="Kumrat Valley">Kumrat Valley &amp; Jahaz Banda</option>
+                  </optgroup>
+                  <optgroup label="✈️ International Destinations">
+                    {DESTINATIONS.map((d) => (
+                      <option key={d.id} value={d.country}>
+                        {d.country} ({d.name})
+                      </option>
+                    ))}
+                    <option value="Schengen / Europe">Schengen / Europe (29 Countries)</option>
+                    <option value="UK / London">United Kingdom</option>
+                    <option value="Other Country">Other Country / Custom Destination</option>
+                  </optgroup>
+                  {/* If custom initialDestination is passed and not matched */}
+                  {formData.destination && ![
+                    'Makkah & Madinah',
+                    'Northern Pakistan Tour',
+                    'Swat Valley',
+                    'Naran & Kaghan',
+                    'Hunza Valley & Nagar',
+                    'Skardu & Baltistan',
+                    'Azad Kashmir',
+                    'Murree & Galiyat',
+                    'Chitral & Kalash',
+                    'Kumrat Valley',
+                    'Schengen / Europe',
+                    'UK / London',
+                    'Other Country',
+                    ...DESTINATIONS.map(d => d.country)
+                  ].includes(formData.destination) && (
+                    <option value={formData.destination}>{formData.destination}</option>
+                  )}
                 </select>
               </div>
             </div>
