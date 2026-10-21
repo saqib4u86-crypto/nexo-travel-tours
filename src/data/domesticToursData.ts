@@ -71,7 +71,7 @@ export const DOMESTIC_DESTINATIONS: DomesticDestination[] = [
     province: 'Khyber Pakhtunkhwa',
     tagline: 'Switzerland of the East & Gandhara Heartland',
     description: 'Famed for lush alpine meadows, crystal-clear trout streams, roaring waterfalls, snow-clad peaks, and historical Buddhist stupas. A year-round paradise offering skiing in winter and emerald cool getaways in summer.',
-    image: 'https://images.unsplash.com/photo-1598894100588-46c59bcf72e1?auto=format&fit=crop&w=1200&q=80',
+    image: '/assets/aistudio/Swat_0c32724b.jpg',
     visitingPoints: [
       'Malam Jabba Ski Resort & 800m Chairlift',
       'Kalam Valley & Roaring Swat River Basin',

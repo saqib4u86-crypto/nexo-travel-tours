@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { NexoLogo } from './NexoLogo';
+import { NavDrawer } from './NavDrawer';
 import { PageView, Currency } from '../types';
 import { 
   Phone, 
-  Mail, 
   Clock, 
   Menu, 
   X, 
-  Compass, 
   Calendar, 
   FileCheck, 
-  ChevronRight,
   Globe2,
   Sparkles,
-  ShieldCheck
+  ShieldCheck,
+  ChevronDown,
+  Layers,
+  ArrowRight
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -31,235 +32,288 @@ export const Navbar: React.FC<NavbarProps> = ({
   onCurrencyChange,
   onOpenConsultationModal,
 }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems: { id: PageView; label: string; badge?: string }[] = [
-    { id: 'home', label: 'Home' },
-    { id: 'umrah', label: 'Umrah Packages', badge: '🕋 Sacred' },
-    { id: 'domestic-tours', label: 'Domestic Tours', badge: '🇵🇰' },
-    { id: 'dubai-visa', label: 'Dubai Visa', badge: '24–72h' },
-    { id: 'turkey-visa', label: 'Turkey Visa', badge: 'File Audit' },
-    { id: 'packages', label: 'Holiday Packages' },
-    { id: 'destinations', label: 'Destinations' },
-    { id: 'visa-guide', label: 'Visa Checker' },
-    { id: 'contact', label: 'Contact' },
-  ];
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [visaDropdownOpen, setVisaDropdownOpen] = useState(false);
 
   const handleNavClick = (page: PageView) => {
     onNavigate(page);
-    setMobileMenuOpen(false);
+    setVisaDropdownOpen(false);
+    setIsDrawerOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full shadow-sm bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-      {/* Top Bar with Urdu Slogan & Quick Contact */}
-      <div className="bg-[#2C3E50] text-slate-200 text-xs py-2 px-4 sm:px-8 border-b border-slate-700">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+    <>
+      <header className="sticky top-0 z-40 w-full shadow-xs bg-white/95 backdrop-blur-md border-b border-slate-200">
+        {/* Top Strip with Urdu Motto & Helpline Numbers */}
+        <div className="bg-[#2C3E50] text-slate-200 text-xs py-2 px-4 sm:px-8 border-b border-slate-700">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+            
+            {/* Left: Official Urdu Slogan & Trust Badge */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] text-[11px] font-semibold">
+                <Sparkles className="w-3 h-3 text-[#E67E22]" />
+                Official Motto
+              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-urdu text-[#E67E22] text-sm font-bold tracking-wide">
+                  منزل سوچ کی دہلیز پر
+                </span>
+                <span className="text-slate-400 hidden sm:inline text-[11px]">
+                  (Manzil Soch ki Dehleez par)
+                </span>
+              </div>
+              <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 text-[10px] font-bold border border-cyan-500/30">
+                <ShieldCheck className="w-3 h-3 text-cyan-400" />
+                Verified Travel &amp; Visa Advisory
+              </span>
+            </div>
+
+            {/* Right: Helpline Numbers & Currency Switcher */}
+            <div className="flex items-center gap-4 text-slate-300">
+              <div className="hidden lg:flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5 text-[#00A8CC]" />
+                <a
+                  href="tel:+92516125268"
+                  className="hover:text-[#00A8CC] transition-colors text-xs font-semibold"
+                >
+                  +92 51 6125268
+                </a>
+                <span className="text-slate-500">/</span>
+                <a
+                  href="tel:+923205718477"
+                  className="hover:text-[#00A8CC] transition-colors text-xs font-semibold"
+                >
+                  +92 320 5718477
+                </a>
+              </div>
+
+              <div className="hidden sm:flex items-center gap-1.5 text-slate-400">
+                <Clock className="w-3.5 h-3.5 text-[#00A8CC]" />
+                <span>Mon - Sat: 9:30 AM - 7:30 PM</span>
+              </div>
+
+              {/* Currency Selector */}
+              <div className="flex items-center gap-1.5 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-600/60">
+                <Globe2 className="w-3.5 h-3.5 text-[#00A8CC]" />
+                <label htmlFor="currency-select" className="sr-only">Currency</label>
+                <select
+                  id="currency-select"
+                  value={currency}
+                  onChange={(e) => onCurrencyChange(e.target.value as Currency)}
+                  className="bg-transparent text-white text-xs font-semibold focus:outline-none cursor-pointer"
+                >
+                  <option value="USD" className="bg-[#2C3E50] text-white">USD ($)</option>
+                  <option value="PKR" className="bg-[#2C3E50] text-white">PKR (₨)</option>
+                  <option value="AED" className="bg-[#2C3E50] text-white">AED (AED)</option>
+                  <option value="EUR" className="bg-[#2C3E50] text-white">EUR (€)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Navbar */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-4">
           
-          {/* Left: Official Urdu Slogan & Trust Badge */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] text-[11px] font-semibold">
-              <Sparkles className="w-3 h-3 text-[#E67E22]" />
-              Official Motto
-            </span>
-            <div className="flex items-center gap-2">
-              <span className="font-urdu text-[#E67E22] text-sm font-bold tracking-wide">
-                منزل سوچ کی دہلیز پر
-              </span>
-              <span className="text-slate-400 hidden sm:inline text-[11px]">
-                (Manzil Soch ki Dehleez par)
-              </span>
-            </div>
-            <span className="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 text-[10px] font-bold border border-cyan-500/30">
-              <ShieldCheck className="w-3 h-3 text-cyan-400" />
-              Verified Travel &amp; Visa Advisory
-            </span>
-          </div>
-
-          {/* Right: Contact Numbers & Currency Switcher */}
-          <div className="flex items-center gap-4 text-slate-300">
-            <div className="hidden lg:flex items-center gap-1.5">
-              <Phone className="w-3.5 h-3.5 text-[#00A8CC]" />
-              <a
-                href="tel:+92516125268"
-                className="hover:text-[#00A8CC] transition-colors text-xs font-semibold"
-              >
-                +92 51 6125268
-              </a>
-              <span className="text-slate-500">/</span>
-              <a
-                href="tel:+923205718477"
-                className="hover:text-[#00A8CC] transition-colors text-xs font-semibold"
-              >
-                +92 320 5718477
-              </a>
-            </div>
-
-            <div className="hidden sm:flex items-center gap-1.5 text-slate-400">
-              <Clock className="w-3.5 h-3.5 text-[#00A8CC]" />
-              <span>Mon - Sat: 9:30 AM - 7:30 PM</span>
-            </div>
-
-            {/* Currency Selector */}
-            <div className="flex items-center gap-1.5 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-600/60">
-              <Globe2 className="w-3.5 h-3.5 text-[#00A8CC]" />
-              <label htmlFor="currency-select" className="sr-only">Currency</label>
-              <select
-                id="currency-select"
-                value={currency}
-                onChange={(e) => onCurrencyChange(e.target.value as Currency)}
-                className="bg-transparent text-white text-xs font-semibold focus:outline-none cursor-pointer"
-              >
-                <option value="USD" className="bg-[#2C3E50] text-white">USD ($)</option>
-                <option value="PKR" className="bg-[#2C3E50] text-white">PKR (₨)</option>
-                <option value="AED" className="bg-[#2C3E50] text-white">AED (AED)</option>
-                <option value="EUR" className="bg-[#2C3E50] text-white">EUR (€)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-        {/* Brand Logo */}
-        <button
-          id="nav-logo-btn"
-          onClick={() => handleNavClick('home')}
-          className="focus:outline-none text-left"
-          aria-label="Nexo Travel Home"
-        >
-          <NexoLogo size="md" />
-        </button>
-
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {navItems.map((item) => {
-            const isActive = currentPage === item.id;
-            return (
-              <button
-                key={item.id}
-                id={`nav-link-${item.id}`}
-                onClick={() => handleNavClick(item.id)}
-                className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
-                  isActive
-                    ? 'text-[#00A8CC] bg-[#00A8CC]/10 shadow-xs'
-                    : 'text-[#2C3E50] hover:text-[#00A8CC] hover:bg-slate-100/80'
-                }`}
-              >
-                {item.label}
-                {item.badge && (
-                  <span className="px-1.5 py-0.2 text-[10px] font-bold rounded-full bg-[#E67E22] text-white animate-pulse">
-                    {item.badge}
-                  </span>
-                )}
-                {isActive && (
-                  <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#00A8CC] rounded-full" />
-                )}
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Action CTAs */}
-        <div className="hidden sm:flex items-center gap-3">
+          {/* Brand Logo */}
           <button
-            id="nav-quick-check-btn"
-            onClick={() => handleNavClick('visa-guide')}
-            className="px-3.5 py-2 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors flex items-center gap-1.5"
+            id="nav-logo-btn"
+            onClick={() => handleNavClick('home')}
+            className="focus:outline-none text-left shrink-0"
+            aria-label="Nexo Travel Home"
           >
-            <FileCheck className="w-4 h-4 text-[#00A8CC]" />
-            <span>Visa Assessment</span>
+            <NexoLogo size="md" />
           </button>
 
-          <button
-            id="nav-consultation-cta-btn"
-            onClick={onOpenConsultationModal}
-            className="px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-[#00A8CC] hover:bg-[#0088A8] shadow-sm hover:shadow transition-all duration-200 flex items-center gap-2"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>Book Consultation</span>
-          </button>
-        </div>
-
-        {/* Mobile Hamburger Button */}
-        <button
-          id="mobile-menu-toggle-btn"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-lg text-[#2C3E50] hover:bg-slate-100 focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-lg animate-in slide-in-from-top-2 duration-200">
-          <div className="p-3 bg-amber-50 rounded-lg border border-amber-200/70 mb-3">
-            <div className="font-urdu text-[#E67E22] text-sm font-bold text-center">
-              منزل سوچ کی دہلیز پر
-            </div>
-            <p className="text-[11px] text-[#2C3E50] text-center mt-1">
-              Your destination is at the doorstep of your thoughts.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-1">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                id={`mobile-nav-${item.id}`}
-                onClick={() => handleNavClick(item.id)}
-                className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold flex items-center justify-between ${
-                  currentPage === item.id
-                    ? 'bg-[#00A8CC]/10 text-[#00A8CC]'
-                    : 'text-[#2C3E50] hover:bg-slate-50'
-                }`}
-              >
-                <span>{item.label}</span>
-                {item.badge ? (
-                  <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-[#E67E22] text-white">
-                    {item.badge}
-                  </span>
-                ) : (
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
-                )}
-              </button>
-            ))}
-          </div>
-
-          <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+          {/* Desktop Navigation Tabs */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+            {/* Home Tab */}
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenConsultationModal();
-              }}
-              className="w-full py-3 rounded-lg text-sm font-bold text-white bg-[#00A8CC] text-center flex items-center justify-center gap-2 shadow-sm"
+              id="nav-link-home"
+              onClick={() => handleNavClick('home')}
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all whitespace-nowrap ${
+                currentPage === 'home'
+                  ? 'text-[#00A8CC] bg-[#00A8CC]/10 shadow-2xs'
+                  : 'text-[#2C3E50] hover:text-[#00A8CC] hover:bg-slate-100'
+              }`}
+            >
+              Home
+            </button>
+
+            {/* Dedicated Umrah Tab */}
+            <button
+              id="nav-link-umrah"
+              onClick={() => handleNavClick('umrah')}
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+                currentPage === 'umrah'
+                  ? 'text-white bg-[#064E3B] shadow-sm'
+                  : 'text-[#064E3B] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80'
+              }`}
+            >
+              <span>🕋 Umrah Packages</span>
+              <span className={`px-1.5 py-0.2 text-[9px] font-extrabold rounded-full ${
+                currentPage === 'umrah' ? 'bg-amber-400 text-slate-900' : 'bg-[#E67E22] text-white'
+              }`}>
+                Sacred
+              </span>
+            </button>
+
+            {/* Dedicated Domestic Tours Tab */}
+            <button
+              id="nav-link-domestic-tours"
+              onClick={() => handleNavClick('domestic-tours')}
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+                currentPage === 'domestic-tours'
+                  ? 'text-white bg-[#064E3B] shadow-sm'
+                  : 'text-emerald-800 bg-emerald-50/70 hover:bg-emerald-100 border border-emerald-200/80'
+              }`}
+            >
+              <span>🇵🇰 Domestic Tours</span>
+              <span className={`px-1.5 py-0.2 text-[9px] font-extrabold rounded-full ${
+                currentPage === 'domestic-tours' ? 'bg-white text-[#064E3B]' : 'bg-emerald-600 text-white'
+              }`}>
+                Pakistan
+              </span>
+            </button>
+
+            {/* Visa Services Dropdown Tab */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setVisaDropdownOpen(true)}
+              onMouseLeave={() => setVisaDropdownOpen(false)}
+            >
+              <button
+                id="nav-link-visa-services"
+                onClick={() => handleNavClick('visa-guide')}
+                className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all flex items-center gap-1 whitespace-nowrap ${
+                  currentPage === 'dubai-visa' || currentPage === 'turkey-visa' || currentPage === 'visa-guide'
+                    ? 'text-[#00A8CC] bg-[#00A8CC]/10 shadow-2xs'
+                    : 'text-[#2C3E50] hover:text-[#00A8CC] hover:bg-slate-100'
+                }`}
+              >
+                <span>Visa Services</span>
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+              </button>
+
+              {visaDropdownOpen && (
+                <div className="absolute top-full left-0 w-64 pt-2 z-50">
+                  <div className="bg-white rounded-xl shadow-xl border border-slate-200 p-2 space-y-1 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <button
+                      onClick={() => handleNavClick('dubai-visa')}
+                      className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-between"
+                    >
+                      <div>
+                        <div className="font-bold text-xs text-[#2C3E50]">🇦🇪 Dubai Visit Visa</div>
+                        <div className="text-[10px] text-slate-500">30 &amp; 60 Days Express e-Visa</div>
+                      </div>
+                      <span className="text-[9px] font-black px-1.5 py-0.2 bg-[#00A8CC] text-white rounded">24-72h</span>
+                    </button>
+
+                    <button
+                      onClick={() => handleNavClick('turkey-visa')}
+                      className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-between"
+                    >
+                      <div>
+                        <div className="font-bold text-xs text-[#2C3E50]">🇹🇷 Turkey Visa &amp; Audit</div>
+                        <div className="text-[10px] text-slate-500">Embassy file audit &amp; appointments</div>
+                      </div>
+                      <span className="text-[9px] font-black px-1.5 py-0.2 bg-[#E67E22] text-white rounded">Audit</span>
+                    </button>
+
+                    <button
+                      onClick={() => handleNavClick('visa-guide')}
+                      className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-between border-t border-slate-100 pt-2"
+                    >
+                      <div>
+                        <div className="font-bold text-xs text-[#00A8CC] flex items-center gap-1">
+                          <FileCheck className="w-3.5 h-3.5" />
+                          <span>Visa Eligibility Checker</span>
+                        </div>
+                        <div className="text-[10px] text-slate-500">Check required documents &amp; fees</div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Holiday Packages Tab */}
+            <button
+              id="nav-link-packages"
+              onClick={() => handleNavClick('packages')}
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all whitespace-nowrap ${
+                currentPage === 'packages'
+                  ? 'text-[#00A8CC] bg-[#00A8CC]/10 shadow-2xs'
+                  : 'text-[#2C3E50] hover:text-[#00A8CC] hover:bg-slate-100'
+              }`}
+            >
+              Holiday Packages
+            </button>
+
+            {/* Destinations Tab */}
+            <button
+              id="nav-link-destinations"
+              onClick={() => handleNavClick('destinations')}
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all whitespace-nowrap ${
+                currentPage === 'destinations'
+                  ? 'text-[#00A8CC] bg-[#00A8CC]/10 shadow-2xs'
+                  : 'text-[#2C3E50] hover:text-[#00A8CC] hover:bg-slate-100'
+              }`}
+            >
+              Destinations
+            </button>
+
+            {/* Contact Tab */}
+            <button
+              id="nav-link-contact"
+              onClick={() => handleNavClick('contact')}
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold transition-all whitespace-nowrap ${
+                currentPage === 'contact'
+                  ? 'text-[#00A8CC] bg-[#00A8CC]/10 shadow-2xs'
+                  : 'text-[#2C3E50] hover:text-[#00A8CC] hover:bg-slate-100'
+              }`}
+            >
+              Contact
+            </button>
+          </nav>
+
+          {/* Action CTAs + Directory Drawer Button */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Consultation Booking Button */}
+            <button
+              id="nav-consultation-cta-btn"
+              onClick={onOpenConsultationModal}
+              className="hidden sm:flex px-3.5 py-2 rounded-lg text-xs font-bold text-white bg-[#00A8CC] hover:bg-[#0088A8] shadow-xs hover:shadow transition-all items-center gap-1.5 whitespace-nowrap"
             >
               <Calendar className="w-4 h-4" />
-              Book Free Visa Consultation
+              <span>Book Consultation</span>
             </button>
-            <div className="flex flex-col gap-1.5">
-              <a
-                href="tel:+92516125268"
-                className="w-full py-2.5 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 text-center flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors"
-              >
-                <Phone className="w-4 h-4 text-[#00A8CC]" />
-                Call Helpline: +92 51 6125268
-              </a>
-              <a
-                href="tel:+923205718477"
-                className="w-full py-2.5 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 text-center flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors"
-              >
-                <Phone className="w-4 h-4 text-[#00A8CC]" />
-                Call / WhatsApp: +92 320 5718477
-              </a>
-            </div>
+
+            {/* Dedicated Directory Drawer Trigger Button (Available on all screen sizes) */}
+            <button
+              id="nav-drawer-open-btn"
+              onClick={() => setIsDrawerOpen(true)}
+              className="px-3 py-2 rounded-lg text-xs font-bold text-[#2C3E50] bg-slate-100 hover:bg-slate-200 border border-slate-300/80 transition-all flex items-center gap-1.5 shadow-2xs"
+              aria-label="Open Directory Drawer"
+              title="Browse all categories, tours, and services in drawer"
+            >
+              <Menu className="w-4 h-4 text-[#00A8CC]" />
+              <span className="hidden sm:inline">All Directory</span>
+            </button>
           </div>
+
         </div>
-      )}
-    </header>
+      </header>
+
+      {/* Slide-over Directory Drawer */}
+      <NavDrawer
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        currentPage={currentPage}
+        onNavigate={handleNavClick}
+        onOpenConsultationModal={onOpenConsultationModal}
+      />
+    </>
   );
 };

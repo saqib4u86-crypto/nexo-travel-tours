@@ -125,13 +125,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </button>
         </div>
 
-        {/* High-Converting Visa Quick Shortcuts Strip */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto">
+        {/* High-Converting Visa & Tour Quick Shortcuts Strip */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
+          <button
+            onClick={() => onNavigate('umrah')}
+            className="px-3.5 py-1.5 rounded-full bg-emerald-800/40 hover:bg-emerald-800/60 border border-emerald-400/50 text-amber-300 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-xs transform hover:scale-105"
+          >
+            <span>🕋 Umrah Packages</span>
+            <span className="px-1.5 py-0.2 text-[9px] rounded-full bg-amber-400 text-slate-900 font-black">Sacred Tab</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('domestic-tours')}
+            className="px-3.5 py-1.5 rounded-full bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-400/40 text-emerald-200 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-xs transform hover:scale-105"
+          >
+            <span>🇵🇰 Domestic Tours (Swat, Hunza, Skardu)</span>
+            <span className="px-1.5 py-0.2 text-[9px] rounded-full bg-emerald-500 text-white font-black">PK Tab</span>
+          </button>
+
           <button
             onClick={() => onNavigate('dubai-visa')}
             className="px-3.5 py-1.5 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/40 text-cyan-300 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-xs transform hover:scale-105"
           >
-            <span>🇦🇪 Dubai Visit Visa (30/60 Days)</span>
+            <span>🇦🇪 Dubai Visit Visa</span>
             <span className="px-1.5 py-0.2 text-[9px] rounded-full bg-emerald-500 text-white font-black">24-72h</span>
           </button>
 
@@ -139,14 +155,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             onClick={() => onNavigate('turkey-visa')}
             className="px-3.5 py-1.5 rounded-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-300 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-xs transform hover:scale-105"
           >
-            <span>🇹🇷 Turkey Visa &amp; Anatolia Audit</span>
+            <span>🇹🇷 Turkey Visa &amp; Audit</span>
             <span className="px-1.5 py-0.2 text-[9px] rounded-full bg-[#E67E22] text-white font-black">Free Eval</span>
           </button>
-
-          <div className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-            <span>Verified Travel &amp; Visa Advisory</span>
-          </div>
         </div>
 
         {/* Interactive Quick Search / Filter Card */}

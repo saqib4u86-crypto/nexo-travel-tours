@@ -21,6 +21,7 @@ import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsOfServicePage } from './components/TermsOfServicePage';
 import { UmrahShowcaseSection } from './components/UmrahShowcaseSection';
 import { DomesticToursSection } from './components/DomesticToursSection';
+import { HomeCategoryGateways } from './components/HomeCategoryGateways';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -72,16 +73,10 @@ export default function App() {
               onSelectDestination={handleSelectDestination}
             />
 
-            {/* Extreme Religious Attraction: Umrah Packages & Sacred Sanctuary */}
-            <UmrahShowcaseSection
-              onOpenConsultationModal={handleOpenConsultationModal}
+            {/* Clean Category Gateways (Direct Access to Dedicated Tabs) */}
+            <HomeCategoryGateways
               onNavigate={handleNavigate}
-            />
-
-            {/* Discover Pakistan: Domestic Tours Section */}
-            <DomesticToursSection
               onOpenConsultationModal={handleOpenConsultationModal}
-              onNavigate={handleNavigate}
             />
 
             {/* Quick Destination Grid */}
@@ -92,34 +87,8 @@ export default function App() {
               selectedDestinationId={selectedDestinationForView}
             />
 
-            {/* High-Converting Visa Landing Section 1: Dubai Visit Visa */}
-            <DubaiVisaSection
-              currency={currency}
-              onOpenConsultationModal={handleOpenConsultationModal}
-            />
-
-            {/* High-Converting Visa Landing Section 2: Turkey Visa & Anatolia Audit */}
-            <TurkeyVisaSection
-              currency={currency}
-              onOpenConsultationModal={handleOpenConsultationModal}
-            />
-
-            {/* Featured Tour Packages */}
-            <TourPackagesSection
-              currency={currency}
-              onNavigate={handleNavigate}
-              onOpenConsultationModal={handleOpenConsultationModal}
-            />
-
             {/* Services Overview */}
             <ServicesSection
-              onNavigate={handleNavigate}
-              onOpenConsultationModal={handleOpenConsultationModal}
-            />
-
-            {/* Interactive Visa Assessment Tool */}
-            <VisaAssessmentTool
-              currency={currency}
               onNavigate={handleNavigate}
               onOpenConsultationModal={handleOpenConsultationModal}
             />
@@ -259,7 +228,34 @@ export default function App() {
         )}
 
         {currentPage === 'umrah' && (
-          <div className="pt-2 animate-in fade-in duration-300">
+          <div className="animate-in fade-in duration-300">
+            {/* Dedicated Tab Top Header / Breadcrumb */}
+            <div className="bg-[#042820] text-emerald-100 py-3.5 px-4 sm:px-8 border-b border-emerald-800/60 shadow-xs">
+              <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+                <div className="flex items-center gap-2">
+                  <button 
+                    onClick={() => handleNavigate('home')} 
+                    className="text-emerald-300 hover:text-white underline font-semibold flex items-center gap-1"
+                  >
+                    <span>Home</span>
+                  </button>
+                  <span className="text-emerald-600">/</span>
+                  <span className="text-amber-300 font-bold flex items-center gap-1">
+                    <span>🕋 Sacred Umrah Sanctuary &amp; Packages</span>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => handleNavigate('domestic-tours')}
+                    className="text-emerald-300 hover:text-white text-xs underline font-medium"
+                  >
+                    Explore Domestic Pakistan Tours 🇵🇰 &rarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <UmrahShowcaseSection
               onOpenConsultationModal={handleOpenConsultationModal}
               onNavigate={handleNavigate}
@@ -271,7 +267,34 @@ export default function App() {
         )}
 
         {currentPage === 'domestic-tours' && (
-          <div className="pt-2 animate-in fade-in duration-300">
+          <div className="animate-in fade-in duration-300">
+            {/* Dedicated Tab Top Header / Breadcrumb */}
+            <div className="bg-[#122A22] text-emerald-100 py-3.5 px-4 sm:px-8 border-b border-emerald-800/60 shadow-xs">
+              <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+                <div className="flex items-center gap-2">
+                  <button 
+                    onClick={() => handleNavigate('home')} 
+                    className="text-emerald-300 hover:text-white underline font-semibold flex items-center gap-1"
+                  >
+                    <span>Home</span>
+                  </button>
+                  <span className="text-emerald-600">/</span>
+                  <span className="text-emerald-300 font-bold flex items-center gap-1">
+                    <span>🇵🇰 Discover Pakistan (Domestic Tours)</span>
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => handleNavigate('umrah')}
+                    className="text-amber-300 hover:text-white text-xs underline font-medium"
+                  >
+                    Explore Sacred Umrah Packages 🕋 &rarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <DomesticToursSection
               onOpenConsultationModal={handleOpenConsultationModal}
               onNavigate={handleNavigate}

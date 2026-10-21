@@ -186,6 +186,10 @@ export const DomesticToursSection: React.FC<DomesticToursSectionProps> = ({
                     alt={dest.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1598894100588-46c59bcf72e1?auto=format&fit=crop&w=1200&q=80';
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
